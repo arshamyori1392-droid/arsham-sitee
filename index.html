@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arsham | Personal Website</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080812;color:white;
+ font-family:Tahoma,sans-serif;
+ transition:.3s;
+}
+nav{
+ display:flex;justify-content:space-between;
+ padding:20px 7%;background:#111120;
+ position:sticky;top:0;z-index:5;
+}
+.logo{color:#b77cff;font-weight:bold;font-size:22px}
+nav a{color:white;text-decoration:none;margin:8px;font-size:13px}
+.hero{
+ min-height:440px;padding:90px 20px 60px;
+ text-align:center;
+ background:radial-gradient(circle at top,#482078,#080812 70%);
+}
+.hero h1{font-size:38px;color:#c99aff}
+.hero p{color:#bbb;line-height:2}
+.btn{
+ padding:13px 25px;border:0;border-radius:12px;
+ background:#963fff;color:white;font-size:15px;
+}
+section{padding:45px 20px;text-align:center}
+h2{color:#c99aff}
+.cards{
+ display:flex;flex-wrap:wrap;
+ justify-content:center;gap:18px;
+}
+.card{
+ width:260px;padding:25px;border-radius:18px;
+ background:#171728;border:1px solid #543278;
+ transition:.3s;
+}
+.card:hover{transform:translateY(-7px)}
+.card p{color:#bbb;line-height:2}
+#clock{color:#c99aff;font-size:22px}
+footer{padding:25px;text-align:center;color:#888}
+.light{background:#f0edfa;color:#171322}
+.light nav,.light .card{background:#fff;color:#171322}
+.light nav a{color:#171322}
+.light .card p{color:#555}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="logo">ARSHAM.DEV</div>
+ <div>
+  <a href="#about">درباره من</a>
+  <a href="#projects">پروژه‌ها</a>
+  <a href="#contact">ارتباط</a>
+ </div>
+</nav>
+
+<div class="hero">
+ <h1>سلام، من آرشام هستم 👋</h1>
+ <p>به دنیای شخصی من خوش آمدید</p>
+ <p>علاقه‌مند به برنامه‌نویسی و تکنولوژی</p>
+ <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">
+ مشاهده پروژه‌ها
+ </button>
+</div>
+
+<section id="about">
+ <h2>درباره من</h2>
+ <div class="card" style="margin:auto">
+  <p>من آرشام هستم و به دنیای کامپیوتر، طراحی سایت و برنامه‌نویسی علاقه دارم.</p>
+ </div>
+</section>
+
+<section id="projects">
+ <h2>پروژه‌های من</h2>
+ <div class="cards">
+  <div class="card">
+   <h3>🌐 طراحی سایت</h3>
+   <p>ساخت وب‌سایت با HTML و CSS</p>
+  </div>
+  <div class="card">
+   <h3>🐍 Python</h3>
+   <p>یادگیری برنامه‌نویسی پایتون</p>
+  </div>
+  <div class="card">
+   <h3>📱 Termux</h3>
+   <p>ساخت پروژه با گوشی</p>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <h2>ارتباط با من</h2>
+ <p>به‌زودی راه‌های ارتباطی اضافه می‌شوند.</p>
+ <p id="clock"></p>
+ <button class="btn" onclick="document.body.classList.toggle('light')">
+ تغییر تم 🌙
+ </button>
+</section>
+
+<footer>© 2026 ARSHAM.DEV</footer>
+
+<script>
+function updateClock(){
+ document.getElementById('clock').textContent =
+ 'ساعت: '+new Date().toLocaleTimeString('fa-IR');
+}
+updateClock();
+setInterval(updateClock,1000);
+</script>
+
+</body>
+</html>
+<title>Arsham Website</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #090912;
+  color: white;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+}
+
+nav {
+  padding: 22px;
+  background: #151522;
+  color: #bd8aff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 90px 15px;
+  background: linear-gradient(135deg,#26104b,#080812);
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #c18aff;
+}
+
+.hero p {
+  color: #ccc;
+  line-height: 2;
+}
+
+button {
+  background: #963fff;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.card {
+  background: #171725;
+  margin: 25px auto;
+  padding: 25px;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 18px;
+  border: 1px solid #53317a;
+}
+
+h2 {
+  color: #c18aff;
+}
+
+footer {
+  padding: 30px;
+  color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<nav>ARSHAM.DEV</nav>
+
+<div class="hero">
+  <h1>سلام، من آرشام هستم 👋</h1>
+  <p>به وب‌سایت شخصی من خوش آمدید</p>
+  <button onclick="alert('خوش آمدی!')">
+    ورود به سایت
+  </button>
+</div>
+
+<div class="card">
+  <h2>درباره من</h2>
+  <p>من عاشق تکنولوژی، کامپیوتر و برنامه‌نویسی هستم.</p>
+</div>
+
+<div class="card">
+  <h2>علاقه‌مندی‌ها</h2>
+  <p>💻 برنامه‌نویسی</p>
+  <p>🎮 بازی</p>
+  <p>⚽ فوتبال</p>
+</div>
+
+<footer>
+  © 2026 Arsham Website
+</footer>
+
+</body>
+</html>
