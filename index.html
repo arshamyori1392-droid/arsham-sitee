@@ -3,234 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d1b">
-  <meta name="description" content="وب‌سایت شخصی آرشام یوری؛ برنامه‌نویسی، تکنولوژی و پروژه‌های خلاقانه.">
-  <title>ARSHAM.DEV | Arsham Yori</title>
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Arsham Yori Market - قیمت ارز، طلا، سکه و بازارهای جهانی">
+  <title>Arsham Yori | بازار زنده</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg:#080d1b; --panel:#111b30; --panel2:#0c1426; --text:#edf5ff;
-      --muted:#a8b7ce; --accent:#42dcff; --accent2:#8a9cff;
-      --line:rgba(142,177,255,.17); --shadow:0 18px 55px rgba(0,0,0,.22);
-    }
-    body.light {
-      color-scheme:light;
-      --bg:#f3f7ff; --panel:#fff; --panel2:#eaf1ff; --text:#142039;
-      --muted:#586780; --accent:#087fba; --accent2:#596be0;
-      --line:rgba(35,68,120,.16); --shadow:0 18px 55px rgba(30,60,110,.10);
-    }
-    *{box-sizing:border-box;scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(ellipse at 12% 8%,rgba(66,220,255,.11),transparent 32%),radial-gradient(ellipse at 88% 35%,rgba(138,156,255,.12),transparent 34%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.9;transition:background .25s,color .25s}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(1080px,91%);margin:auto}
-    header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{font-weight:900;letter-spacing:1px;color:var(--accent);direction:ltr;font-size:20px}
-    .nav-right{display:flex;align-items:center;gap:18px}
-    .navlinks{display:flex;flex-wrap:wrap;gap:17px;color:var(--muted);font-size:13px}
-    .navlinks a:hover{color:var(--accent)}
-    .tools{display:flex;gap:8px}
-    .tool{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:7px 11px;border-radius:10px;cursor:pointer;font-size:12px}
-    .hero{min-height:570px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:35px;padding:70px 0}
-    .eyebrow{color:var(--accent);font-size:12px;letter-spacing:2px;direction:ltr;display:inline-block}
-    h1{font-size:clamp(38px,7vw,67px);line-height:1.3;margin:12px 0}
-    h1 span{color:var(--accent);text-shadow:0 0 28px color-mix(in srgb,var(--accent) 35%,transparent)}
-    .intro{color:var(--muted);max-width:620px;font-size:15px}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
-    .btn{display:inline-block;padding:10px 19px;border-radius:12px;font-weight:bold;font-size:13px;transition:.2s}
-    .primary{color:#06111b;background:linear-gradient(100deg,var(--accent),var(--accent2))}
-    .secondary{border:1px solid var(--line);background:var(--panel)}
-    .btn:hover,.tool:hover{transform:translateY(-2px)}
-    .avatar-card{display:grid;place-items:center;min-height:290px}
-    .avatar{width:min(245px,65vw);aspect-ratio:1;border-radius:38%;display:grid;place-items:center;font-size:100px;font-weight:900;direction:ltr;color:#07111e;background:linear-gradient(145deg,var(--accent),var(--accent2) 75%);box-shadow:0 0 65px color-mix(in srgb,var(--accent) 22%,transparent),inset 0 0 25px rgba(255,255,255,.3);animation:float 4s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-13px) rotate(3deg)}}
-    section{padding:48px 0}
-    .section-title{font-size:27px;margin:0 0 5px}
-    .section-sub{margin:0 0 23px;color:var(--muted);font-size:13px}
-    .card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow);transition:.25s;min-width:0}
-    .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .icon{font-size:27px}
-    .card h3{font-size:16px;margin:8px 0 4px}
-    .card p{color:var(--muted);font-size:13px;margin:0}
-    .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
-    .tag{border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,var(--panel));font-size:12px}
-    .project-link{display:inline-block;margin-top:14px;color:var(--accent);font-size:13px}
-    .gallery-tile{height:150px;border-radius:13px;display:grid;place-items:center;font-size:42px;background:linear-gradient(135deg,rgba(66,220,255,.22),rgba(138,156,255,.3));border:1px solid var(--line);margin-bottom:13px}
-    .gallery-note{font-size:11px!important;margin-top:7px!important}
-    .social{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .counter{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    .counter img{max-width:100%;height:32px}
-    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px;text-align:center}
-    .reveal{animation:appear .8s both}
-    @keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    #splash{position:fixed;inset:0;z-index:100;background:#080d1b;display:grid;place-items:center;transition:opacity .65s,visibility .65s}
-    #splash.hide{opacity:0;visibility:hidden;pointer-events:none}
-    .splash-inner{text-align:center;color:#edf5ff}
-    .splash-logo{font-size:clamp(28px,8vw,52px);font-weight:900;letter-spacing:3px;color:#42dcff;direction:ltr;animation:pulse 1.3s ease-in-out infinite alternate}
-    .splash-line{height:3px;width:0;max-width:240px;background:linear-gradient(90deg,#42dcff,#8a9cff);margin:15px auto 0;border-radius:9px;animation:load 1.4s ease forwards}
-    @keyframes pulse{to{text-shadow:0 0 25px #42dcff;transform:scale(1.035)}}
-    @keyframes load{to{width:220px}}
-    @media(max-width:760px){
-      nav{align-items:flex-start;flex-direction:column;padding:12px 0}
-      .nav-right{width:100%;justify-content:space-between;flex-wrap:wrap}
-      .navlinks{gap:11px}
-      .hero{grid-template-columns:1fr;text-align:center;padding:48px 0}
-      .intro{margin:auto}.actions{justify-content:center}
-      .avatar-card{min-height:205px}.avatar{width:170px;font-size:72px}
-      .grid{grid-template-columns:1fr}section{padding:38px 0}
-    }
+    :root{color-scheme:dark;--bg:#090d18;--panel:#111a2b;--panel2:#162238;--text:#eef4ff;--muted:#9aabc5;--line:#263651;--accent:#54e0b5;--blue:#6da8ff;--red:#ff7185}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at top,#142541 0,var(--bg) 55%);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+    .wrap{width:min(1100px,94%);margin:auto}
+    header{padding:28px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--accent),var(--blue));display:grid;place-items:center;color:#07111c;font-size:24px;font-weight:bold;box-shadow:0 8px 30px #54e0b533}
+    h1{font-size:22px;margin:0 0 5px}
+    .sub,.muted{color:var(--muted);font-size:12px}
+    .live{border:1px solid #235a4b;background:#102c28;color:var(--accent);padding:9px 13px;border-radius:30px;font-size:12px}
+    .hero{padding:24px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(120deg,#14263d,#10192a);margin:8px 0 22px}
+    .hero h2{margin:0 0 9px;font-size:21px}.hero p{margin:0;color:var(--muted);line-height:1.9;font-size:13px}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    input,select,button{font:inherit;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:12px}
+    input{flex:1;min-width:190px}select{min-width:130px}
+    button{cursor:pointer;background:#173d3a;border-color:#28695d;color:var(--accent);font-weight:bold}
+    button:disabled{opacity:.6;cursor:wait}
+    .section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:28px 0 13px}
+    .section-title h2{font-size:17px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
+    .card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:17px;min-width:0}
+    .card-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .asset-name{font-size:13px;color:var(--muted)}
+    .symbol{font-size:10px;color:#7f94b4;direction:ltr}
+    .price{font-size:21px;font-weight:bold;margin:16px 0 8px;overflow-wrap:anywhere}
+    .unit{font-size:11px;color:var(--muted)}
+    .change{font-size:12px;display:inline-block;padding:5px 8px;border-radius:8px;background:#172c2c;color:var(--accent);direction:ltr}
+    .change.down{background:#351d29;color:var(--red)}
+    .stale{font-size:10px;color:#ffd27a;margin-top:9px}
+    .fresh{font-size:10px;color:var(--accent);margin-top:9px}
+    .all-list{display:grid;gap:8px}
+    .row-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+    .row-item strong{font-size:13px}.row-item small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+    .row-price{text-align:left;font-weight:bold;font-size:13px;direction:ltr}
+    .status{padding:14px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:13px;text-align:center;line-height:1.8}
+    footer{border-top:1px solid var(--line);margin-top:35px;padding:22px 0 35px;color:var(--muted);font-size:11px;line-height:2}
+    footer a{color:var(--accent)}
+    .tiny{font-size:10px;color:var(--muted)}
+    @media(max-width:520px){header{padding-top:20px}.hero{padding:18px}.price{font-size:19px}.row-item{grid-template-columns:1fr}.row-price{text-align:right}}
   </style>
 </head>
 <body>
-  <div id="splash" aria-label="Welcome">
-    <div class="splash-inner"><div class="splash-logo">ARSHAM.DEV</div><div data-i18n="loading">در حال آماده‌سازی...</div><div class="splash-line"></div></div>
-  </div>
-
-  <header>
-    <nav class="wrap">
-      <a class="logo" href="#home">ARSHAM.DEV</a>
-      <div class="nav-right">
-        <div class="navlinks">
-          <a href="#about" data-i18n="navAbout">درباره من</a>
-          <a href="#skills" data-i18n="navSkills">مهارت‌ها</a>
-          <a href="#projects" data-i18n="navProjects">پروژه‌ها</a>
-          <a href="#gallery" data-i18n="navGallery">گالری</a>
-          <a href="#contact" data-i18n="navContact">ارتباط</a>
-        </div>
-        <div class="tools">
-          <button class="tool" id="themeBtn" type="button" aria-label="Toggle theme">☀️ <span data-i18n="theme">تم</span></button>
-          <button class="tool" id="langBtn" type="button">EN</button>
-        </div>
-      </div>
-    </nav>
-  </header>
-
   <main class="wrap">
-    <div class="hero" id="home">
-      <div class="reveal">
-        <span class="eyebrow">WELCOME TO MY WEBSITE</span>
-        <h1><span data-i18n="hello">سلام، من</span> <span data-i18n="name">آرشام</span> <span data-i18n="am">هستم</span></h1>
-        <p class="intro" data-i18n="intro">به وب‌سایت شخصی من خوش اومدی! من به دنیای تکنولوژی، برنامه‌نویسی و ساخت پروژه‌های خلاقانه علاقه دارم. اینجا می‌تونی با علاقه‌مندی‌ها و پروژه‌های من آشنا بشی.</p>
-        <div class="actions">
-          <a class="btn primary" href="#projects" data-i18n="seeProjects">دیدن پروژه‌ها</a>
-          <a class="btn secondary" href="#about" data-i18n="moreAbout">بیشتر درباره من</a>
-        </div>
+    <header>
+      <div class="brand">
+        <div class="logo">AY</div>
+        <div><h1>ARSHAM YORI</h1><div class="sub">داشبورد قیمت بازار</div></div>
       </div>
-      <div class="avatar-card"><div class="avatar">A</div></div>
+      <div class="live">● داده‌های بازار</div>
+    </header>
+
+    <section class="hero">
+      <h2>نبض بازار در یک نگاه 📊</h2>
+      <p>قیمت ارز، طلا، سکه و دارایی‌های دیگر را اینجا دنبال کن. اطلاعات از یک منبع داده عمومی دریافت می‌شود و ممکن است با تأخیر همراه باشد.</p>
+    </section>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="جست‌وجو: دلار، طلا، بیت‌کوین، ..." aria-label="جست‌وجوی دارایی">
+      <select id="category" aria-label="دسته‌بندی">
+        <option value="all">همه دسته‌ها</option>
+        <option value="currency">ارز</option>
+        <option value="gold">طلا</option>
+        <option value="coin">سکه</option>
+        <option value="crypto">رمزارز</option>
+        <option value="commodity">کالا و فلزات</option>
+      </select>
+      <button id="refresh">↻ بروزرسانی</button>
     </div>
 
-    <section id="about">
-      <h2 class="section-title" data-i18n="aboutTitle">درباره من</h2>
-      <p class="section-sub" data-i18n="aboutSub">چند خط درباره دنیای من</p>
-      <div class="card">
-        <div class="icon">👨‍💻</div>
-        <h3 data-i18n="aboutHeading">علاقه‌مند به یادگیری و ساختن</h3>
-        <p data-i18n="aboutText">من آرشام یوری هستم. از یادگیری برنامه‌نویسی، کار با ابزارهای تکنولوژی، ساخت وب‌سایت و دنبال کردن فوتبال لذت می‌برم. هدفم اینه که هر روز چیز تازه‌ای یاد بگیرم و ایده‌هام رو به پروژه تبدیل کنم.</p>
-      </div>
+    <div class="section-title"><h2>⭐ قیمت‌های منتخب</h2><span class="tiny" id="updated">در انتظار دریافت اطلاعات…</span></div>
+    <section class="grid" id="featured">
+      <div class="status">در حال دریافت قیمت‌ها…</div>
     </section>
 
-    <section id="skills">
-      <h2 class="section-title" data-i18n="skillsTitle">مهارت‌ها و علاقه‌مندی‌ها</h2>
-      <p class="section-sub" data-i18n="skillsSub">ابزارهایی که باهاشون کار می‌کنم یا در حال یادگیری‌شون هستم</p>
-      <div class="tags">
-        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Termux</span>
-        <span class="tag" data-i18n="webMaking">ساخت وب‌سایت</span><span class="tag" data-i18n="tech">تکنولوژی</span><span class="tag" data-i18n="football">فوتبال</span>
-      </div>
+    <div class="section-title"><h2>🌍 فهرست بازار</h2><span class="tiny" id="count"></span></div>
+    <section class="all-list" id="allAssets">
+      <div class="status">در حال بارگذاری فهرست…</div>
     </section>
+    <div class="toolbar" style="justify-content:center"><button id="more" hidden>نمایش موارد بیشتر</button></div>
 
-    <section id="projects">
-      <h2 class="section-title" data-i18n="projectsTitle">پروژه‌های من</h2>
-      <p class="section-sub" data-i18n="projectsSub">بعضی از کارهایی که انجام می‌دم</p>
-      <div class="grid">
-        <article class="card"><div class="icon">🌐</div><h3 data-i18n="siteProject">وب‌سایت شخصی</h3><p data-i18n="siteProjectText">همین وب‌سایت؛ ساخته‌شده با HTML و CSS و منتشرشده با GitHub Pages.</p><a class="project-link" href="#home" data-i18n="viewing">در حال مشاهده ←</a></article>
-        <article class="card"><div class="icon">🎬</div><h3 data-i18n="youtubeProject">کانال یوتیوب</h3><p data-i18n="youtubeText">ویدیوها و ادیت‌های سرگرم‌کننده من رو در کانال یوتیوب ببین.</p><a class="project-link" href="https://www.youtube.com/@MEME_BOTTOM" target="_blank" rel="noopener" data-i18n="openChannel">رفتن به کانال ←</a></article>
-        <article class="card"><div class="icon">⌨️</div><h3 data-i18n="codingProject">تمرین برنامه‌نویسی</h3><p data-i18n="codingText">تمرین و آزمایش ایده‌های تازه با ابزارهای برنامه‌نویسی.</p><span class="project-link" data-i18n="comingSoon">پروژه‌های آینده</span></article>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <h2 class="section-title" data-i18n="galleryTitle">گالری من</h2>
-      <p class="section-sub" data-i18n="gallerySub">نمونه‌هایی از دنیای خلاقیت و پروژه‌ها</p>
-      <div class="grid">
-        <article class="card"><div class="gallery-tile">💻</div><h3 data-i18n="galleryOne">دنیای برنامه‌نویسی</h3><p data-i18n="galleryOneText">ایده‌ها و تمرین‌های کدنویسی</p></article>
-        <article class="card"><div class="gallery-tile">🎮</div><h3 data-i18n="galleryTwo">بازی و سرگرمی</h3><p data-i18n="galleryTwoText">علاقه به بازی‌ها و دنیای دیجیتال</p></article>
-        <article class="card"><div class="gallery-tile">🎨</div><h3 data-i18n="galleryThree">ادیت و طراحی</h3><p data-i18n="galleryThreeText">طرح‌ها و ایده‌های خلاقانه</p></article>
-      </div>
-      <p class="section-sub gallery-note" data-i18n="galleryTip">برای نمایش عکس‌های واقعی خودت، می‌تونی بعداً تصاویرت رو به این بخش اضافه کنی.</p>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title" data-i18n="contactTitle">شبکه‌های اجتماعی</h2>
-      <p class="section-sub" data-i18n="contactSub">از اینجا کانال یوتیوب من رو ببین</p>
-      <div class="card social">
-        <div><div class="icon">▶️</div><h3>YouTube · @MEME_BOTTOM</h3><p data-i18n="socialText">ویدیوها و ادیت‌های من</p></div>
-        <a class="btn primary" href="https://www.youtube.com/@MEME_BOTTOM" target="_blank" rel="noopener" data-i18n="follow">مشاهده کانال</a>
-      </div>
-    </section>
-
-    <section id="visits">
-      <div class="card counter">
-        <div><h2 class="section-title" data-i18n="visitsTitle">آمار بازدید سایت</h2><p class="section-sub" data-i18n="visitsSub">تعداد بازدیدهای ثبت‌شده از این صفحه</p></div>
-        <a href="https://hits.sh/arshamyori1392-droid.github.io/arsham-sitee/" target="_blank" rel="noopener" aria-label="Visitor counter"><img src="https://hits.sh/arshamyori1392-droid.github.io/arsham-sitee.svg?style=for-the-badge&label=VISITORS&color=42dcff" alt="Website visitor counter"></a>
-      </div>
-    </section>
+    <footer>
+      <div>منبع داده: <a href="https://iran-market.github.io/" target="_blank" rel="noopener">Iran Market Data</a></div>
+      <div>قیمت‌ها به واحدی نمایش داده می‌شوند که منبع برای هر دارایی اعلام کرده است؛ قیمت‌های بازار ایران معمولاً تومان هستند.</div>
+      <div>زمان آخرین دریافت و وضعیت کهنگی داده‌ها را بررسی کن. این وب‌سایت صرفاً اطلاع‌رسانی است و توصیه خرید یا فروش نیست.</div>
+      <div>© Arsham Yori</div>
+    </footer>
   </main>
 
-  <footer><div class="wrap"><span data-i18n="madeBy">ساخته‌شده با علاقه توسط آرشام یوری</span> · <span dir="ltr">© 2026 ARSHAM.DEV</span></div></footer>
+<script>
+(() => {
+  "use strict";
+  const API = "https://raw.githubusercontent.com/iran-market/iran-market.github.io/main/data/latest-toman.json";
+  const REFRESH_MS = 30 * 60 * 1000;
+  const featuredSymbols = ["USD_IRR_FREE","EUR_IRR_FREE","GBP_IRR_FREE","GOLD_18K_IRR","COIN_EMAMI_IRR","USDT_IRR"];
+  const featuredEl = document.getElementById("featured");
+  const listEl = document.getElementById("allAssets");
+  const searchEl = document.getElementById("search");
+  const categoryEl = document.getElementById("category");
+  const refreshBtn = document.getElementById("refresh");
+  const moreBtn = document.getElementById("more");
+  let assets = [];
+  let visibleCount = 40;
+  let lastLoaded = null;
 
-  <script>
-    const translations = {
-      fa: {
-        loading:"در حال آماده‌سازی...",navAbout:"درباره من",navSkills:"مهارت‌ها",navProjects:"پروژه‌ها",navGallery:"گالری",navContact:"ارتباط",theme:"تم",
-        hello:"سلام، من",name:"آرشام",am:"هستم",intro:"به وب‌سایت شخصی من خوش اومدی! من به دنیای تکنولوژی، برنامه‌نویسی و ساخت پروژه‌های خلاقانه علاقه دارم. اینجا می‌تونی با علاقه‌مندی‌ها و پروژه‌های من آشنا بشی.",
-        seeProjects:"دیدن پروژه‌ها",moreAbout:"بیشتر درباره من",aboutTitle:"درباره من",aboutSub:"چند خط درباره دنیای من",aboutHeading:"علاقه‌مند به یادگیری و ساختن",
-        aboutText:"من آرشام یوری هستم. از یادگیری برنامه‌نویسی، کار با ابزارهای تکنولوژی، ساخت وب‌سایت و دنبال کردن فوتبال لذت می‌برم. هدفم اینه که هر روز چیز تازه‌ای یاد بگیرم و ایده‌هام رو به پروژه تبدیل کنم.",
-        skillsTitle:"مهارت‌ها و علاقه‌مندی‌ها",skillsSub:"ابزارهایی که باهاشون کار می‌کنم یا در حال یادگیری‌شون هستم",webMaking:"ساخت وب‌سایت",tech:"تکنولوژی",football:"فوتبال",
-        projectsTitle:"پروژه‌های من",projectsSub:"بعضی از کارهایی که انجام می‌دم",siteProject:"وب‌سایت شخصی",siteProjectText:"همین وب‌سایت؛ ساخته‌شده با HTML و CSS و منتشرشده با GitHub Pages.",
-        viewing:"در حال مشاهده ←",youtubeProject:"کانال یوتیوب",youtubeText:"ویدیوها و ادیت‌های سرگرم‌کننده من رو در کانال یوتیوب ببین.",openChannel:"رفتن به کانال ←",
-        codingProject:"تمرین برنامه‌نویسی",codingText:"تمرین و آزمایش ایده‌های تازه با ابزارهای برنامه‌نویسی.",comingSoon:"پروژه‌های آینده",
-        galleryTitle:"گالری من",gallerySub:"نمونه‌هایی از دنیای خلاقیت و پروژه‌ها",galleryOne:"دنیای برنامه‌نویسی",galleryOneText:"ایده‌ها و تمرین‌های کدنویسی",
-        galleryTwo:"بازی و سرگرمی",galleryTwoText:"علاقه به بازی‌ها و دنیای دیجیتال",galleryThree:"ادیت و طراحی",galleryThreeText:"طرح‌ها و ایده‌های خلاقانه",
-        galleryTip:"برای نمایش عکس‌های واقعی خودت، می‌تونی بعداً تصاویرت رو به این بخش اضافه کنی.",contactTitle:"شبکه‌های اجتماعی",contactSub:"از اینجا کانال یوتیوب من رو ببین",
-        socialText:"ویدیوها و ادیت‌های من",follow:"مشاهده کانال",visitsTitle:"آمار بازدید سایت",visitsSub:"تعداد بازدیدهای ثبت‌شده از این صفحه",madeBy:"ساخته‌شده با علاقه توسط آرشام یوری"
-      },
-      en: {
-        loading:"Getting things ready...",navAbout:"About",navSkills:"Skills",navProjects:"Projects",navGallery:"Gallery",navContact:"Contact",theme:"Theme",
-        hello:"Hello, I'm",name:"Arsham",am:"",intro:"Welcome to my personal website! I'm interested in technology, programming, and building creative projects. Explore my interests and projects here.",
-        seeProjects:"View projects",moreAbout:"About me",aboutTitle:"About me",aboutSub:"A little about my world",aboutHeading:"Curious, learning, and building",
-        aboutText:"I'm Arsham Yori. I enjoy learning programming, exploring technology tools, building websites, and following football. My goal is to learn something new and turn ideas into projects.",
-        skillsTitle:"Skills & interests",skillsSub:"Tools I use or am currently learning",webMaking:"Web development",tech:"Technology",football:"Football",
-        projectsTitle:"My projects",projectsSub:"Some things I'm working on",siteProject:"Personal website",siteProjectText:"This website, built with HTML and CSS and published with GitHub Pages.",
-        viewing:"You're here ←",youtubeProject:"YouTube channel",youtubeText:"Watch my fun videos and edits on YouTube.",openChannel:"Visit channel ←",
-        codingProject:"Coding practice",codingText:"Practicing and testing new ideas with programming tools.",comingSoon:"Coming soon",
-        galleryTitle:"My gallery",gallerySub:"A few snapshots of creativity and projects",galleryOne:"Programming world",galleryOneText:"Coding ideas and practice",
-        galleryTwo:"Games & fun",galleryTwoText:"An interest in games and the digital world",galleryThree:"Editing & design",galleryThreeText:"Creative designs and ideas",
-        galleryTip:"You can add your own photos to this section later.",contactTitle:"Social media",contactSub:"Visit my YouTube channel here",
-        socialText:"My videos and edits",follow:"Visit channel",visitsTitle:"Website visits",visitsSub:"Visits recorded for this page",madeBy:"Made with care by Arsham Yori"
+  const faNumber = n => Number(n).toLocaleString("fa-IR",{maximumFractionDigits:4});
+  const number = n => Number(n).toLocaleString("en-US",{maximumFractionDigits:4});
+  const currencyLabel = currency => currency === "IRT" ? "تومان" : (currency || "واحد نامشخص");
+  const safeText = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const categoryName = c => ({currency:"ارز",gold:"طلا",coin:"سکه",crypto:"رمزارز",commodity:"کالا و فلزات"}[c] || c || "سایر");
+  const priceText = item => `${faNumber(item.price)} ${currencyLabel(item.currency)}`;
+  const isStale = item => item.stale === true || (item.quality || []).includes("stale");
+
+  function card(item) {
+    const pct = Number(item.change_pct);
+    const hasChange = Number.isFinite(pct);
+    const down = hasChange && pct < 0;
+    const change = hasChange ? `<span class="change ${down ? "down" : ""}">${down ? "▼" : "▲"} ${number(Math.abs(pct))}%</span>` : "";
+    const state = isStale(item)
+      ? `<div class="stale">⚠️ داده قدیمی است</div>`
+      : `<div class="fresh">● آخرین وضعیت: تازه</div>`;
+    return `<article class="card">
+      <div class="card-top"><span class="asset-name">${safeText(item.name_fa || item.name_en || item.symbol)}</span><span class="symbol">${safeText(item.symbol)}</span></div>
+      <div class="price">${priceText(item)}</div>
+      <div>${change} <span class="unit">${safeText(item.unit || "")}</span></div>
+      ${state}
+    </article>`;
+  }
+
+  function renderFeatured() {
+    const selected = featuredSymbols.map(symbol => assets.find(x => x.symbol === symbol)).filter(x => x && x.price != null);
+    featuredEl.innerHTML = selected.length ? selected.map(card).join("") : `<div class="status">قیمت‌های منتخب در داده فعلی پیدا نشدند.</div>`;
+  }
+
+  function renderList() {
+    const query = searchEl.value.trim().toLocaleLowerCase();
+    const category = categoryEl.value;
+    const filtered = assets.filter(item => {
+      const text = `${item.name_fa || ""} ${item.name_en || ""} ${item.symbol || ""}`.toLocaleLowerCase();
+      return (category === "all" || item.category === category) && (!query || text.includes(query));
+    });
+    document.getElementById("count").textContent = `${faNumber(filtered.length)} مورد`;
+    const shown = filtered.slice(0, visibleCount);
+    listEl.innerHTML = shown.length ? shown.map(item => `
+      <div class="row-item">
+        <div><strong>${safeText(item.name_fa || item.name_en || item.symbol)}</strong><small>${safeText(categoryName(item.category))} · ${safeText(item.symbol)} ${isStale(item) ? "· داده قدیمی" : ""}</small></div>
+        <div class="row-price">${priceText(item)}${Number.isFinite(Number(item.change_pct)) ? `<small class="${Number(item.change_pct)<0 ? "stale" : "fresh"}">${number(item.change_pct)}%</small>` : ""}</div>
+      </div>`).join("") : `<div class="status">موردی مطابق جست‌وجو پیدا نشد.</div>`;
+    moreBtn.hidden = filtered.length <= visibleCount;
+  }
+
+  async function loadMarket() {
+    refreshBtn.disabled = true;
+    refreshBtn.textContent = "در حال دریافت…";
+    try {
+      const response = await fetch(API + "?v=" + Date.now(), {cache:"no-store"});
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      const payload = await response.json();
+      const categories = payload?.data?.categories;
+      if (!categories || typeof categories !== "object") throw new Error("ساختار داده نامعتبر است");
+      assets = Object.values(categories).flat().filter(item =>
+        item && item.symbol && item.price !== null && item.price !== undefined && Number.isFinite(Number(item.price))
+      );
+      assets.sort((a,b) => String(a.name_fa || a.symbol).localeCompare(String(b.name_fa || b.symbol),"fa"));
+      lastLoaded = new Date();
+      const sourceTime = payload.data.generated_at_jalali || payload.data.generated_at || payload.meta?.updated_at;
+      document.getElementById("updated").textContent = sourceTime
+        ? `زمان داده منبع: ${sourceTime}`
+        : `دریافت صفحه: ${lastLoaded.toLocaleTimeString("fa-IR")}`;
+      renderFeatured();
+      renderList();
+    } catch (error) {
+      if (!assets.length) {
+        featuredEl.innerHTML = `<div class="status">دریافت اطلاعات ناموفق بود. اتصال اینترنت را بررسی و دوباره تلاش کن.</div>`;
+        listEl.innerHTML = "";
       }
-    };
-    let language = "fa";
-    const langButton = document.getElementById("langBtn");
-    langButton.addEventListener("click", () => {
-      language = language === "fa" ? "en" : "fa";
-      document.documentElement.lang = language;
-      document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[language][key] !== undefined) el.textContent = translations[language][key];
-      });
-      langButton.textContent = language === "fa" ? "EN" : "FA";
-    });
-    const themeButton = document.getElementById("themeBtn");
-    themeButton.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      themeButton.firstChild.textContent = document.body.classList.contains("light") ? "🌙 " : "☀️ ";
-    });
-    window.addEventListener("load", () => {
-      setTimeout(() => document.getElementById("splash").classList.add("hide"), 1500);
-    });
-  </script>
+      document.getElementById("updated").textContent = "خطا در دریافت اطلاعات";
+      console.error("Market API:", error);
+    } finally {
+      refreshBtn.disabled = false;
+      refreshBtn.textContent = "↻ بروزرسانی";
+    }
+  }
+
+  searchEl.addEventListener("input", () => { visibleCount = 40; renderList(); });
+  categoryEl.addEventListener("change", () => { visibleCount = 40; renderList(); });
+  refreshBtn.addEventListener("click", loadMarket);
+  moreBtn.addEventListener("click", () => { visibleCount += 40; renderList(); });
+
+  loadMarket();
+  // داده منبع هر ۳۰ دقیقه منتشر می‌شود؛ صفحه نیز هر ۳۰ دقیقه دوباره آن را می‌خواند.
+  setInterval(loadMarket, REFRESH_MS);
+})();
+</script>
 </body>
 </html>
